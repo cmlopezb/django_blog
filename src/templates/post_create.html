@@ -1,0 +1,9 @@
+<h1> Bienvenido para {{ form_type }} la pag de post</h1>
+<!-- {{ form_type }} como son distintas cosas entonces se usa ese type para q diga create o update  sin crear un nuevo html -->
+<form method="POST" action="."> <!-- El '.' es para que el POST lo haga en la pag donde esta actualmente -->
+    {% csrf_token %} <!-- Da el permiso para enviar el POST, de lo contrario dara error (forbiden request)-->
+    {{form.as_p}} <!-- as_p es para que se vea como un parrafo -->
+    <button type="submit">{{ form_type }} post</button>
+</form>
+
+
